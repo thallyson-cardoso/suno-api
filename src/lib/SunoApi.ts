@@ -216,7 +216,9 @@ class SunoApi {
    */
   private async click(target: Locator|Page, position?: { x: number, y: number }): Promise<void> {
     if (this.ghostCursorEnabled) {
-      let pos: any = isPage(target) ? { x: 0, y: 0 } : await target.boundingBox();
+      let pos: any = isPage(target)
+        ? { x: 0, y: 0 }
+        : await (target as Locator).boundingBox();
       if (position) 
         pos = {
           ...pos,

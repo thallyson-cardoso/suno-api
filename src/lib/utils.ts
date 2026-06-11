@@ -1,5 +1,5 @@
 import pino from "pino";
-import { Page } from "rebrowser-playwright-core";
+import { Page } from "playwright";
 
 const logger = pino();
 

@@ -232,9 +232,9 @@ class SunoApi {
       });
     } else {
       if (isPage(target))
-        return target.mouse.click(position?.x ?? 0, position?.y ?? 0);
+        return (target as Page).mouse.click(position?.x ?? 0, position?.y ?? 0);
       else
-        return target.click({ force: true, position });
+        return (target as Locator).click({ force: true, position });
     }
   }
 
